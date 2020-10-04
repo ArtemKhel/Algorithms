@@ -1,0 +1,13 @@
+zero
+one
+one
+one
+two
+three
+four
+eight
+nine
+zero
+ten
+eleven
+twelve
