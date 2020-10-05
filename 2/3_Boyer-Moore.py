@@ -2,6 +2,7 @@
 def boyer_moore(string, pattern):
     ls = len(string)
     lp = len(pattern)
+    ret = []
         
     border = [0] * (lp + 1)
     shift = [0] * (lp + 1)
@@ -17,11 +18,11 @@ def boyer_moore(string, pattern):
             j -= 1
 
         if j < 0:
-            yield i
+            ret.append(i)
             i = i + shift[0]
         else:
             i = i + max(shift[j + 1], j - bad_char.get(string[i + j], lp))
-    return -1
+    return ret
 
 
 def get_bad_char(pattern):
