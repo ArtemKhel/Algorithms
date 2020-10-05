@@ -61,23 +61,23 @@ def get_partial_suffix(border, shift, lp):
 
 string = 'GCAGCAGAGCAAGAGTATACAGGCAGATGCAGAGAG'
 pattern = 'GCAGA'
-print([i for i in boyer_moore(string, pattern)])
+print(boyer_moore(string, pattern))
 
 string =  'skakalka'
 pattern = 'alk'
-print([i for i in boyer_moore(string, pattern)])
+print(boyer_moore(string, pattern))
 
 string =  'olokolokol'
 pattern = 'okol'
-print([i for i in boyer_moore(string, pattern)])
+print(boyer_moore(string, pattern))
         
 string =  'aaaaa'
 pattern = 'a'
-print([i for i in boyer_moore(string, pattern)])
+print(boyer_moore(string, pattern))
 
 string =  'abcdef'
 pattern = 'x'
-print([i for i in boyer_moore(string, pattern)])
+print(boyer_moore(string, pattern))
 
 
 
