@@ -13,9 +13,9 @@ def diff(f1, f2):
                 print(f'    {f1.readline()}', end='')
                 f2.readline()
             elif x == 1:
-                print('\033[92m' + f'--- {f1.readline()}' + '\033[0m', end='')
+                print('\033[91m' + f'--- {f1.readline()}' + '\033[0m', end='')
             else:
-                print('\033[91m' + f'+++ {f2.readline()}' + '\033[0m', end='')
+                print('\033[92m' + f'+++ {f2.readline()}' + '\033[0m', end='')
         return
 
     def add_to_queue(i, j, dir_=0):
