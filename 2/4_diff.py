@@ -36,25 +36,25 @@ def diff(f1, f2):
     
     queue = [(0, 0)]
     path_queue = [[]]
-    visited = []
+    visited = [0] * (len1 * len2)
     while queue:
         i, j = queue.pop(0)
         path = path_queue.pop(0)
         
-        if (i,j) in visited:
+        if visited[i * len1 + j]:
             continue
-        visited.append((i,j))
+        visited[i * len1 + j] = 1
         
         if i == len1 and j == len2:
         #     print(path)
             backtrace()
 
-        if i < len1 and j < len2 and hash1[i] == hash2[j] and (i + 1, j + 1) not in visited:
+        if i < len1 and j < len2 and hash1[i] == hash2[j] and not visited[(i + 1) * len1 + j + 1]:
             add_to_queue(i + 1, j + 1)
         else:
-            if i < len1 and (i + 1, j) not in visited:
+            if i < len1 and not visited[(i + 1) * len1 + j]:
                 add_to_queue(i + 1, j, 1)
-            if j < len2 and (i, j + 1) not in visited:
+            if j < len2 and not visited[i * len1 + j + 1]:
                 add_to_queue(i, j + 1, 2)
 
 
