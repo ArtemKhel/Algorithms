@@ -36,7 +36,7 @@ def diff(f1, f2):
     
     queue = [(0, 0)]
     path_queue = [[]]
-    visited = [0] * (len1 * len2)
+    visited = [0] * (len1 + 1) * (len2 + 1)
     while queue:
         i, j = queue.pop(0)
         path = path_queue.pop(0)
